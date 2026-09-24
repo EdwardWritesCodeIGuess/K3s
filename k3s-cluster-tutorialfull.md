@@ -217,6 +217,23 @@ sudo dphys-swapfile swapoff
 sudo systemctl disable dphys-swapfile
 ```
 
+** Edit by me**
+
+```
+sudo dphys-swapfile swapoff
+sudo systemctl disable dphys-swapfile
+```
+Resulted in an an error:
+
+```
+Failed to disable unit: Unit dphys-swapfile.service does not exist
+```
+But I was able to fix it with
+
+```
+sudo swapoff -a
+```
+
 **Verify:**
 ```bash
 swapon --show
